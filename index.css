@@ -1,0 +1,585 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Smythe', sans-serif;
+}
+
+/******** Layout *******/
+body,
+.navbar--title,
+.navbar--text,
+.price-after-discount,
+.total-price,
+.total-text,
+.thanks-message,
+.rating p,
+.text-overlay h1 {
+    margin: 0;
+}
+
+.pizzaAppContainer {
+    width: 600px;
+    height: 1161px;
+}
+
+.pizzaAppContainer,
+.input-eye {
+    position: relative;
+}
+
+.pizzaAppContainer,
+.menu-items-container {
+    margin: 0 auto;
+}
+ 
+.pizzaAppContainer--header {
+    height: 167px;
+    margin-bottom: 67px;
+    background-image: url("images/banner.png");
+}
+
+.navbar {
+    padding: 46px;
+}
+
+.menu-items-container,
+.checkout-section {
+    width: 508px;
+}
+
+.menu-items-container,
+.menu-item,
+.ordered-items-container,
+.order-item,
+.total-bill-container,
+.total-price,
+.payment-modal--form,
+.discounted-price-container,
+.input-eye,
+.star-container,
+.rating {
+    display: flex;
+}
+
+.menu-items-container,
+.ordered-items-container,
+.total-bill-container,
+.payment-modal--form,
+.thanks-message-section,
+.input-eye {
+    flex-direction: column;
+}
+
+.menu-items-container {
+   gap: 45px;
+}
+
+.menu-item {
+    height: 140px;
+    border-bottom: 1px solid #D2D2D2;
+}
+
+.menu-item--details {
+     margin-left: 31px;
+}
+
+.menu-item--name,
+.menu-item--ingredients {
+    margin-bottom: 0;
+}
+
+.checkout-section {
+    margin: 45px auto;
+}
+
+.checkout-section,
+.thanks-message-section,
+.payment-modal {
+    display: none;
+}
+
+.ordered-items-container {
+    gap: 9px;
+}
+
+.order-item,
+.payment-modal--form,
+.thanks-message-section,  
+.input-eye,
+.star-container,
+.rating {
+    align-items: center;
+}
+
+.divider {
+    height: 2px;
+    background-color: #393333;
+    margin-top: 28px;
+}
+
+.divider,
+.thanks-message-section {
+    width: 504px;
+}
+
+.total-bill-container {
+    gap: 53px;
+    margin-top: 14px;
+}
+
+.discounted-price-container {
+    align-items: baseline;
+}
+
+.discounted-price-container,
+.menu-item--price,
+.order-item-price,
+.total-price,
+input,
+.pay-btn,
+.rating {
+    font-size: 20px;
+}
+
+.payment-modal {
+    overflow:hidden;
+    background: white;
+    filter: drop-shadow(5px 5px 255px rgba(0, 0, 0, 0.5));
+}
+
+.payment-modal,
+.checkout-section {
+    height: 542px;
+}
+
+.payment-modal,
+input,
+.pay-btn,
+.opening-modal,
+.text-overlay {
+    border-radius: 4px;
+}
+
+.payment-modal,
+.opening-modal {
+    margin: auto;
+}
+
+.payment-modal,
+.confetti,
+.text-overlay,
+.close-btn,
+.eye-icon {
+    position: absolute;
+}
+
+.payment-modal,
+.opening-modal {
+    right: 0;
+    bottom: 0;
+}
+
+.payment-modal,
+.opening-modal,
+.fullscreen-celebration {
+    top: 0;
+    left: 0;
+} 
+
+.payment-modal--title {
+    margin: 46px 0px;
+    line-height: 31px; 
+}
+
+.payment-modal--form {
+    gap: 23px;
+}
+
+/* ******Typography******* */
+.navbar,
+.pay-btn,
+.complete-order-btn,
+.text-overlay,
+.close-btn {
+    color: #fff;
+}
+
+.navbar--title {
+    font-size: 39px;
+}
+
+.navbar--title,
+.menu-item--ingredients,
+.remove-btn,
+.complete-order-btn,
+.total-price,
+.order-item-price {
+    line-height: 24px; 
+}
+
+.navbar--text {
+    margin-top: 19px;
+    font-size: 22px;
+    line-height: 14px; 
+}
+
+.menu-item--emojis,
+.menu-item--add_btn {
+    font-family: Inter;
+}
+
+.menu-item--emojis {
+    margin-top: 0;
+    margin-left: -10px;
+    opacity: 0.72;
+    font-size: 79px;
+    line-height: 98px;
+    letter-spacing: -1.6px;
+}
+
+.menu-item--name {
+    margin-top: 10px;
+}
+
+.menu-item--name,
+.your-order-text,
+.order-item-name,
+.text-overlay p,
+.your-order-text,
+.price-after-discount,
+.total-text {
+    font-size: 28px;
+}
+
+.menu-item--name,
+.your-order-text,
+.order-item-name {
+    line-height: 17px; 
+}
+
+.menu-item--ingredients {
+    margin-top: 9px;
+    color: #8B8B8B;
+}
+
+.menu-item--price {
+    margin-top: 8px;
+}
+
+.menu-item--add_btn {
+    width: 50px;
+    height: 50px;
+    color: #3C3C3C;
+    font-weight: 200;
+    border: 1.5px solid #DEDEDE;
+    border-radius: 50%;    
+}
+
+.menu-item--add_btn,
+.thanks-message-section {
+    font-size: 32px;
+}
+
+.menu-item--add_btn,
+.order-item-price {
+    margin-left: auto;
+}
+
+.order-item p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.remove-btn {
+    margin-left: 13px;
+    width: 77px;
+    color: #BBB;
+    font-size: 12px;
+}
+
+.remove-btn,
+.complete-order-btn,
+.payment-modal--title,
+input,
+.pay-btn  {
+    font-family: Verdana;
+}
+
+.remove-btn,
+.menu-item--add_btn {
+    background-color: transparent;
+}
+
+.remove-btn,
+.complete-order-btn,
+.pay-btn {
+    border:none;
+}
+
+.your-order-text {
+    margin-bottom: 64px;
+}
+
+.your-order-text, 
+.price-after-discount,
+.total-text {
+    font-weight: 400;
+}
+
+.your-order-text,
+.payment-modal--title,
+.text-overlay {
+    text-align: center;
+}
+
+.total-price,
+.price-after-discount,
+.total-text {
+    color: #0E0E0E;
+}
+
+.total-price,
+.discounted-price-container {
+    justify-content: space-between;
+}
+
+.complete-order-btn {
+    width: 100%;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    padding: 18px;
+}
+
+button:disabled {
+    background-color: gray;
+}
+
+.complete-order-btn,
+.thanks-message-section {
+    border-radius: 3px;
+}
+
+.complete-order-btn,
+.pay-btn  {
+    font-weight: 700;
+}
+
+input {
+    border: 1px solid #757575;
+    text-indent: 25px;
+    color: #757575;
+}
+
+input,
+.pay-btn {
+    width: 476px;
+    height: 71px;
+}
+
+.input-eye,
+.thanks-message-section  {
+    justify-content: center; 
+}
+
+.eye-icon,
+button {
+    cursor: pointer;
+}
+
+.eye-icon {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    filter:grayscale(100%); 
+    text-decoration: line-through;
+}
+
+ .uncross {
+    text-decoration: none;
+} 
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px; 
+    display: none;
+}
+
+/* Show error message and adjust eye icon position when error message is displayed */
+.input-eye.has-error .error-message {
+    display: block;
+    margin-top: 5px; 
+}
+
+.input-eye.has-error .eye-icon {
+    top: calc(50% + 10px); 
+}
+
+.pay-btn {
+    margin-top: 23px;
+}
+
+.pay-btn,
+.complete-order-btn {
+    background: #16DB99;
+}
+
+.thanks-message-section {
+    height: 120px;
+    margin: 45px auto;
+    background: #ECFDF5;
+    color: #065F46;
+    font-family: Smythe;
+}
+
+/* New confetti animation styles */
+.fullscreen-celebration {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.fullscreen-celebration,
+.opening-modal {
+    position: fixed;
+}
+
+.confetti {
+    width: 10px;
+    height: 10px;
+    background-color: #f3f3f3;
+    animation: confetti-animation 10s linear infinite;
+}
+
+@keyframes confetti-animation {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(1080deg);
+    opacity: 0;
+  }
+}
+
+/* Rating Section */
+.star-container {
+    gap: 5px;
+}
+
+.rating {
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.eye-icon,
+.rating {
+    user-select: none;
+}
+
+.star-spin-animation {
+    animation-name: spin;
+    animation-duration: 1s; 
+    animation-timing-function: linear;
+    animation-iteration-count: 1; 
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fa-star {
+  color: gray; 
+}
+
+.fa-star.gold,
+.rating-in-words {
+  color: darkgoldenrod; 
+}
+
+/* Opening Modal */
+.opening-modal {
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+}
+
+.text-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80%;
+    padding: 10px 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-overlay h1 {
+    font-family: 'Brush Script MT', cursive; 
+    font-size: 3em;
+    font-weight: normal;
+}
+
+.text-overlay p {
+    margin-bottom: 5px;
+}
+
+.text-overlay p.special-offer {
+    color: #ff6347; 
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-shadow: 0px 0px red;
+}
+
+.countdown {
+    width: fit-content;
+    display: inline-block;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    margin: 10px auto 0 auto;
+    font-size: 24px;
+    padding: 5px 10px;
+}
+
+.close-btn {
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+  color: #ff6347; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

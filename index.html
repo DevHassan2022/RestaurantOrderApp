@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Ordering App</title>
+    <meta name="description" content="An app for ordering food">
+    <meta name="author" content="Restaurant Ordering App">
+    
+    <!-- Open Graph Protocol -->
+    <meta property="og:title" content="Our Menu">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/banner.png">
+    <meta property="og:url" content="https://restaurantorderingapp">
+    <meta property="og:description" content="Restaurant ordering app is dynamic web app. It allows you to order food. You can add items, remove items, fill in the info etc. Just like a real world food ordering app">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Restaurant Ordering App">
+    
+    <!-- Tab icon -->
+    <link rel="icon" href="images/icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="pizzaAppContainer">
+        <header class="pizzaAppContainer--header">
+            <nav class="navbar">
+                <h1 class="navbar--title">Jimmy’s Diner</h1>
+                <p class="navbar--text">The best burgers and pizzas in town.</p>
+            </nav>
+        </header>
+        <main>
+            <section id="menu-items-container" role="region" aria-label="Menu Items" class="menu-items-container">
+                <!-- Restaurant Menu Rendered With JS -->
+            </section>
+        </main>
+        <section id="checkout-section" role="region" aria-label="Checkout" class="checkout-section">
+            <h2 class="your-order-text">Your order</h2>
+            <div id="ordered-items-container" class="ordered-items-container">
+                <!-- Ordered Items Here -->
+            </div>
+            <div class="divider" role="separator" aria-hidden="true"></div>
+            <div class="total-bill-container">
+                <div>
+                    <div class="total-price">
+                        <h3 class="total-text">Total price:</h3>
+                        <p class="total-price" id="total-price">$0</p>
+                    </div>
+                    <div class="discounted-price-container">
+                        <h3 class="price-after-discount">Discounted Price(orders above $50)</h3>
+                        <p id="discounted-price">$0</p>
+                    </div>
+                </div>
+                <div>
+                    <button id="complete-order-btn" class="complete-order-btn" aria-label="Complete Order Button">Complete Order</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="payment-modal" role="region" aria-label="Payment Modal" class="payment-modal">
+            <h2 class="payment-modal--title">Enter card details</h2>
+            <form class="payment-modal--form" id="payment-modal--form">
+                <input type="text" maxlength="7" placeholder="Enter your name" aria-label="Enter your name" id="customerName" name="customerName" required />
+        
+                <div class="input-eye">
+                    <span id="creditcard-errormessage" class="error-message" aria-live="polite"></span>
+                    <input type="password" maxlength="19" placeholder="Enter card number" aria-label="Enter card number" id="customerCreditCard" name="customerCreditCard" required />
+                    <span class="eye-icon toggle-visibility" data-toggle="customerCreditCard" aria-label="Toggle visibility">👁️</span>
+                </div>
+                
+                <div class="input-eye">
+                    <span id="cvv-errormessage" class="error-message" aria-live="polite"></span>
+                    <input type="password" maxlength="3" placeholder="Enter CVV" aria-label="Enter CVV" id="cvv" name="cvv" required />
+                    <span class="eye-icon toggle-visibility" data-toggle="cvv" aria-label="Toggle visibility">👁️</span>
+                </div>
+                <button class="pay-btn" id="pay-btn" aria-label="Pay Button">Pay</button>
+            </form>
+        </section>
+        
+        <section id="thanks-message-section" role="region" aria-label="Thank You Message" class="thanks-message-section">
+            <h4 class="thanks-message" id="thanks-message">Thanks, <span id="clientName"></span>! Your order is on its way!</h4>
+            <div class="rating" role="group" aria-label="Rate Experience">
+                <p>Rate Your Experience</p>
+                <div>
+                    <i class="star fa-solid fa-star gray" data-star="1" id="one-star" role="button" aria-label="1 Star" tabindex="0"></i>
+                    <i class="star fa-solid fa-star gray" data-star="2" id="two-star" role="button" aria-label="2 Stars" tabindex="0"></i>
+                    <i class="star fa-solid fa-star gray" data-star="3" id="three-star" role="button" aria-label="3 Stars" tabindex="0"></i>
+                    <i class="star fa-solid fa-star gray" data-star="4" id="four-star" role="button" aria-label="4 Stars" tabindex="0"></i>
+                    <i class="star fa-solid fa-star gray" data-star="5" id="five-star" role="button" aria-label="5 Stars" tabindex="0"></i>
+                </div>
+                <p id="rating-in-words" class="rating-in-words"></p>
+            </div>
+        </section>
+        
+        <div class="opening-modal" id="modal" role="presentation" aria-label="Restaurant Sale Promotion">
+            
+            <img src="https://media.giphy.com/media/DpDqgUV7Me07oUksEc/giphy.gif" alt="Restaurant Sale Promotion">
+            <div class="text-overlay">
+                <h1>Welcome to Jimy's Diner!</h1>
+                <p>Enjoy our limited-time offer:</p>
+                <p class="sale-details special-offer">50% off on orders above $50!</p>
+                <span class="countdown" id="countdown"></span>
+            </div>
+            <button class="close-btn" id="modal-close-btn" aria-label="Close Modal Button">X</button>
+        </div>
+
+        <div class="fullscreen-celebration"></div>
+    </div>
+    
+    <script src="index.js" type="module"></script>
+</body>
+</html>
